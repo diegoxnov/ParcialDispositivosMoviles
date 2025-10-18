@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/msg_temporizador_titulo"
-        app:layout_constraintVertical_bias="0.95"
+        android:layout_marginTop="90dp"
         app:layout_constraintBottom_toTopOf="@+id/txt_temporizador"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/msg_temporizador"
-        app:layout_constraintVertical_bias="0.7"
+        android:layout_marginTop="70dp"
         app:layout_constraintBottom_toTopOf="@+id/txt_puntaje"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
+        android:layout_marginTop="385dp"/>
 
     <GridLayout
         android:id="@+id/grid_buttons"
@@ -57,9 +57,9 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
         android:columnCount="3"
-        android:rowCount="3"
+        android:rowCount="2"
         android:padding="0dp"
-        app:layout_constraintVertical_bias="0.7"
+        android:layout_marginTop="260dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,43 +68,43 @@
         <Button
             android:id="@+id/btn_red"
             android:layout_margin="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/red2"/>
 
         <Button
             android:id="@+id/btn_black"
             android:layout_margin="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/black"/>
 
         <Button
             android:id="@+id/btn_blue"
             android:layout_margin="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/blue"/>
 
         <Button
             android:id="@+id/btn_yellow"
             android:layout_margin="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/yellow"/>
 
         <Button
             android:id="@+id/btn_green"
             android:layout_margin="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/green"/>
 
         <Button
             android:id="@+id/btn_orange"
             android:layout_margin="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/orange"/>
 
     </GridLayout>
