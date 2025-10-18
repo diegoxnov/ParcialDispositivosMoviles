@@ -104,7 +104,7 @@
             android:text="@string/msg_yellow"
             android:textStyle="bold"
             android:textSize="13dp"
-            android:textColor="@android:color/red"
+            android:textColor="@color/red2"
             android:backgroundTint="@color/yellow"/>
 
         <Button
