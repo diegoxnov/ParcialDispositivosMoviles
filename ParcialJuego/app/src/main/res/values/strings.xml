@@ -5,4 +5,10 @@
     <string name="msg_temporizador">00:00:00</string>
     <string name="msg_puntaje">puntaje: 0</string>
     <string name="msg_temporizador_titulo">TEMPORIZADOR</string>
+    <string name="btn_red">rojo</string>
+    <string name="btn_black">negro</string>
+    <string name="btn_blue">azul</string>
+    <string name="msg_yellow">amarillo</string>
+    <string name="msg_green">verde</string>
+    <string name="msg_orange">naranja</string>
 </resources>
