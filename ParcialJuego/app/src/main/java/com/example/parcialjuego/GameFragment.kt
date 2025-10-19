@@ -12,6 +12,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.ContentView
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.example.parcialjuego.viewmodel.GameViewModel
 
 
 class GameFragment : Fragment(R.layout.fragment_game) {
@@ -19,11 +23,12 @@ class GameFragment : Fragment(R.layout.fragment_game) {
     private var colorName: String = ""
     private var score: Int = 0
     private lateinit var colorsList: List<Pair<String, Int>>
-    private val random = java.util.Random()
+
     private lateinit var contenedorColor: View
     private lateinit var valorTemporizador: TextView
     private  lateinit var puntaje: TextView
     private  lateinit var botones: List<Button>
+    private val viewModel: GameViewModel by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -98,11 +103,13 @@ class GameFragment : Fragment(R.layout.fragment_game) {
 
     fun finalizarJuego(){
         botones.forEach { it.isEnabled = false }//deshabilitamos los botones, para que el usuario ya no sume puntos
-        Toast.makeText(this.context,"Tiempo terminado",Toast.LENGTH_LONG).show()
-        // findNavController().navigate(
-    //     R.id.action_gameFragment_to_resultFragment,
-    //     bundleOf("puntajeFinal" to puntaje)
-    //  )
+        Toast.makeText(requireContext(), "Tiempo terminado", Toast.LENGTH_LONG).show()
+        viewModel.agregarPuntaje(score)
+
+        findNavController().navigate(
+            R.id.action_gameFragment_to_resultFragment,
+            bundleOf("puntajeFinal" to score)
+        )
     }
 
 }
