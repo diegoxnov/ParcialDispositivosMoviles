@@ -1,6 +1,7 @@
 package com.example.parcialjuego
 
 import android.graphics.Color
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
@@ -30,6 +31,11 @@ class GameFragment : Fragment(R.layout.fragment_game) {
     private  lateinit var botones: List<Button>
     private val viewModel: GameViewModel by activityViewModels()
 
+
+    // MediaPlayer para sonidos de error y correcto
+    private lateinit var sonidoCorrecto: MediaPlayer
+    private lateinit var sonidoIncorrecto: MediaPlayer
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //atributos del xml
@@ -53,6 +59,10 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         )
 
         botones = listOf(btnRed, btnBlack, btnBlue, btnYellow, btnGreen, btnOrange)
+
+        // nicializamos los sonidos
+        sonidoCorrecto = MediaPlayer.create(requireContext(), R.raw.correcto)
+        sonidoIncorrecto = MediaPlayer.create(requireContext(), R.raw.incorrecto)
 
         // Configurar eventos de clic
         btnRed.setOnClickListener { verificarRespuesta("ROJO") }
@@ -91,7 +101,8 @@ class GameFragment : Fragment(R.layout.fragment_game) {
     fun verificarRespuesta(colorSelect/*este valor lo obtenemos del boton*/: String){
         if (colorSelect == colorName){
             actualizarPuntaje()
-        }
+            sonidoCorrecto.start()
+        }else {sonidoIncorrecto.start()}
 
         actualizarColorAleatorio()
     }
