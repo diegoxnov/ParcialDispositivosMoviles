@@ -11,4 +11,6 @@
     <string name="msg_yellow">amarillo</string>
     <string name="msg_green">verde</string>
     <string name="msg_orange">naranja</string>
+    <string name="msg_puntaje_final">0</string>
+    <string name="msg_puntaje_titulof">Puntaje:</string>
 </resources>
