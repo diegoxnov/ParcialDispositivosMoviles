@@ -36,7 +36,8 @@ class ResultFragment : Fragment(R.layout.fragment_result) {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         viewModel.puntajes.observe(viewLifecycleOwner) { lista ->
-            adapter = PuntajeAdapter(lista)
+            val listaOrdenada = lista.sortedDescending() // mayor a menor
+            adapter = PuntajeAdapter(listaOrdenada)
             recyclerView.adapter = adapter
         }
 
