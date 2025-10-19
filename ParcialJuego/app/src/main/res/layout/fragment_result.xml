@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResultFragment">
+    tools:context=".ResultFragment"
+    android:background="@color/cardview_shadow_start_color">
 
     <TextView
         android:id="@+id/txt_puntaje_titulof"

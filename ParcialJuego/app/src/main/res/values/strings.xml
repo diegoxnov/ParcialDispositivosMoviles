@@ -13,4 +13,7 @@
     <string name="msg_orange">naranja</string>
     <string name="msg_puntaje_final">0</string>
     <string name="msg_puntaje_titulof">Puntaje:</string>
+    <string name="msg_titulo">Juego de Colores!</string>
+    <string name="msg_regla">Ver reglas</string>
+    <string name="msg_inicio">Iniciar sesion</string>
 </resources>
