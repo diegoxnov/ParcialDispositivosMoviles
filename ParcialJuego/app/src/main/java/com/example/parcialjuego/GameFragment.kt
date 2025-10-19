@@ -99,6 +99,10 @@ class GameFragment : Fragment(R.layout.fragment_game) {
     fun finalizarJuego(){
         botones.forEach { it.isEnabled = false }//deshabilitamos los botones, para que el usuario ya no sume puntos
         Toast.makeText(this.context,"Tiempo terminado",Toast.LENGTH_LONG).show()
+        // findNavController().navigate(
+    //     R.id.action_gameFragment_to_resultFragment,
+    //     bundleOf("puntajeFinal" to puntaje)
+    //  )
     }
 
 }
