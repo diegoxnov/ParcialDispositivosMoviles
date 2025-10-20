@@ -30,7 +30,7 @@ class WelcomeFragment : Fragment(R.layout.fragment_welcome) {
         }
     }
 
-    private fun mostrarReglas() {
+    private fun mostrarReglas() {//esta funcion contiene la info del alert
         AlertDialog.Builder(requireContext())
             .setTitle("Reglas del juego")
             .setMessage(

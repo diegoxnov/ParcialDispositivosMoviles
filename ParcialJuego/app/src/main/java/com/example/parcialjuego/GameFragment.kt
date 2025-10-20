@@ -58,7 +58,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
             "NEGRO" to ContextCompat.getColor(requireContext(), R.color.black)
         )
 
-        botones = listOf(btnRed, btnBlack, btnBlue, btnYellow, btnGreen, btnOrange)
+        botones = listOf(btnRed, btnBlack, btnBlue, btnYellow, btnGreen, btnOrange)//guardamos los botones en una lista
 
         // nicializamos los sonidos
         sonidoCorrecto = MediaPlayer.create(requireContext(), R.raw.correcto)
@@ -76,9 +76,9 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         iniciarJuego(valorTemporizador)
 
     }
-
+        //guncion para iniciar el juego
     fun iniciarJuego(valorTemp: TextView){
-        valorTemp.text = "30"
+        valorTemp.text = "30"//30 segundos
         actualizarColorAleatorio()
         object : CountDownTimer(30000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
@@ -86,7 +86,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
             }
 
             override fun onFinish() {
-                finalizarJuego()
+                finalizarJuego()//si acaban los 30 seg llamamos a la funcion
             }
         }.start()
     }
@@ -94,32 +94,32 @@ class GameFragment : Fragment(R.layout.fragment_game) {
     fun actualizarColorAleatorio() {
         val (nombre, valorColor) = colorsList.random()//usamos desestructuración, con esto obtenemos el nombre del color y el valor
         colorName = nombre
-        contenedorColor.setBackgroundColor(valorColor)
+        contenedorColor.setBackgroundColor(valorColor)//coloreamos el view al color del random
 
     }
 
     fun verificarRespuesta(colorSelect/*este valor lo obtenemos del boton*/: String){
-        if (colorSelect == colorName){
-            actualizarPuntaje()
-            sonidoCorrecto.start()
-        }else {sonidoIncorrecto.start()}
+        if (colorSelect == colorName){//se compara si el color es el correcto
+            actualizarPuntaje()//si es correcto el color se actualiza el puntaje
+            sonidoCorrecto.start()//lanzamos el sonido "correcto"
+        }else {sonidoIncorrecto.start()}//en caso de no ser correcta la respuesta solo lsanzamos el sonido erroneo
 
-        actualizarColorAleatorio()
+        actualizarColorAleatorio()//se actualiza el color
     }
 
-    fun actualizarPuntaje(){
+    fun actualizarPuntaje(){//se aumenta el puntaje
         score ++
         puntaje.text = score.toString()
     }
 
-    fun finalizarJuego(){
+    fun finalizarJuego(){//
         botones.forEach { it.isEnabled = false }//deshabilitamos los botones, para que el usuario ya no sume puntos
         Toast.makeText(requireContext(), "Tiempo terminado", Toast.LENGTH_LONG).show()
-        viewModel.agregarPuntaje(score)
+        viewModel.agregarPuntaje(score)//llamamos al metodo agregar puntaje del view model para guardar
 
-        findNavController().navigate(
-            R.id.action_gameFragment_to_resultFragment,
-            bundleOf("puntajeFinal" to score)
+        findNavController().navigate(//cambiamos de fragmento
+            R.id.action_gameFragment_to_resultFragment,//colocamos la direccion que da el nav graph
+            bundleOf("puntajeFinal" to score)//pasamos el puntaje con la clave "puntajeFinal"
         )
     }
 
