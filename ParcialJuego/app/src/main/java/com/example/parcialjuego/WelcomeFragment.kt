@@ -35,9 +35,9 @@ class WelcomeFragment : Fragment(R.layout.fragment_welcome) {
             .setTitle("Reglas del juego")
             .setMessage(
                 """
-                - Encuentra todas las parejas antes de que se acabe el tiempo.
-                - Cada acierto suma puntos.
-                - Cada error resta segundos del reloj.
+                - Selecciona el boton con el color del recuadro no te confundas!
+                - 1 acierto = 1 punto
+                - El sonido te indica si es error o correcto
                 - ¡Supera tu récord personal!
                 """.trimIndent()
             )
