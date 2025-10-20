@@ -8,4 +8,6 @@
     <color name="yellow">#D3B805</color>
     <color name="green">#369400</color>
     <color name="orange">#FF7125</color>
+    <color name="stroke">#CCCCCC</color>
+    <color name="solid_item">#F9F9F9</color>
 </resources>
